@@ -1,26 +1,58 @@
-import React from 'react';
-import logo from './logo.svg';
+import { useState } from 'react';
+
+import ProgrammingLanguageList from './components/ProgrammingLanguageList';
+import MainIssue from './components/MainIssue';
+import SearchIssue from './components/SearchIssue';
+
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App: React.FC = () => {
+	const [programmingLanguages, setProgrammingLanguages] = useState<string[]>(
+		[]
+	);
+	const [searchInput, setSearchInput] = useState<string>('');
+	const [showProgrammingLanguageList, setShowProgrammingLanguageList] =
+		useState<boolean>(true);
+
+	const updateProgrammingLanguage = (programmingLanguage: string) => {
+		const programmingLanguageIndex = programmingLanguages.findIndex(
+			prgLan => prgLan === programmingLanguage
+		);
+		if (programmingLanguageIndex !== -1) {
+			setProgrammingLanguages(prevState =>
+				prevState.filter(prgLan => prgLan !== programmingLanguage)
+			);
+		} else {
+			setProgrammingLanguages(prevState => [...prevState, programmingLanguage]);
+		}
+	};
+
+	const updateSearchInput = (searchInput: string) =>
+		setSearchInput(searchInput);
+
+	const toggleProgrammingLanguageList = () =>
+		setShowProgrammingLanguageList(prevState => !prevState);
+
+	return (
+		<>
+			<SearchIssue
+				updateSearchInput={updateSearchInput}
+				toggleProgrammingLanguageList={toggleProgrammingLanguageList}
+			/>
+			<div className="main-container">
+				{showProgrammingLanguageList && (
+					<ProgrammingLanguageList
+						updateProgrammingLanguage={updateProgrammingLanguage}
+						programmingLanguages={programmingLanguages}
+					/>
+				)}
+				<MainIssue
+					programmingLanguages={programmingLanguages}
+					searchInput={searchInput}
+				/>
+			</div>
+		</>
+	);
+};
 
 export default App;

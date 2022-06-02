@@ -1,0 +1,58 @@
+.programmingLanguageList {
+	padding: 2rem 3rem;
+	height: calc(100vh - 8rem);
+	border-right: 3px solid #bbb;
+	width: 30rem;
+}
+
+.programmingLanguageList ul {
+	list-style: none;
+}
+
+.programmingLanguageList li {
+	margin-bottom: 1.2rem;
+}
+
+.programmingLanguageList button {
+	border: none;
+	background-color: #f48024;
+	color: white;
+	padding: 1rem 2rem;
+	font-size: 1.6rem;
+	border-radius: 150px;
+	cursor: pointer;
+	transition: all 0.3s;
+}
+
+.programmingLanguageList button:hover {
+	background-color: white;
+	color: #f48024;
+}
+
+.programmingLanguageList .select-prg {
+	background-color: white;
+	color: #f48024;
+}
+
+.programmingLanguageList .select-prg:hover {
+	background-color: #f48024;
+	color: white;
+}
+
+@media only screen and (max-width: 45.625rem) {
+	.programmingLanguageList {
+		height: auto;
+		border-right: none;
+		height: auto;
+		width: 100%;
+	}
+
+	.programmingLanguageList ul {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	.programmingLanguageList li {
+		margin-right: 1.2rem;
+	}
+} ;

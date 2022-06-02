@@ -1,0 +1,57 @@
+.section-MainIssue {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	padding: 3rem;
+	padding-bottom: 7rem;
+	gap: 3rem;
+	width: calc(100vw - 30rem);
+	height: calc(100vh - 8rem);
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+
+.sort {
+	padding: 1rem 2rem;
+	display: flex;
+	align-items: center;
+}
+
+.sort span {
+	font-size: 1.4rem;
+}
+
+.sort button {
+	display: flex;
+	align-items: center;
+	margin-left: auto;
+	background: none;
+	border: none;
+	cursor: pointer;
+	color: #f48024;
+	font-size: 1.6rem;
+}
+
+.sort--icon {
+	height: 2rem;
+	width: 2rem;
+	margin-right: 0.6rem;
+}
+
+@media only screen and (max-width: 90.625em) {
+	.section-MainIssue {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media only screen and (max-width: 65.625em) {
+	.section-MainIssue {
+		grid-template-columns: repeat(1, 1fr);
+	}
+}
+
+@media only screen and (max-width: 45.625rem) {
+	.section-MainIssue {
+		width: 100%;
+		padding-bottom: 25rem;
+	}
+}

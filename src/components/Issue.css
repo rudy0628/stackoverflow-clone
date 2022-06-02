@@ -1,0 +1,80 @@
+.issue {
+	background-color: #eee;
+	border-radius: 11px;
+	padding: 2rem;
+	display: flex;
+	flex-direction: column;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.issue--title {
+	font-size: 2rem;
+	margin-bottom: 1.2rem;
+}
+
+.issue--title a:link,
+.issue--title a:visited {
+	color: #333;
+}
+
+.issue--title a:hover,
+.issue--title a:active {
+	color: #f48024;
+}
+
+.issue--info {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 1.2rem;
+}
+
+.issue--user {
+	display: flex;
+	align-items: center;
+	font-size: 2rem;
+}
+
+.issue--user img {
+	height: 5rem;
+	width: 5rem;
+	margin-right: 1.2rem;
+	border-radius: 50%;
+}
+
+.issue--time {
+	font-size: 1.6rem;
+	color: #333;
+}
+
+.issue--score {
+	margin-top: auto;
+	font-size: 1.6rem;
+	margin-bottom: 1.4rem;
+}
+
+.issue--tags {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.issue--tags span {
+	background-color: #f48024;
+	color: white;
+	font-size: 1.6rem;
+	padding: 0.6rem 1.2rem;
+	margin-right: 1.2rem;
+	border-radius: 150px;
+	margin-bottom: 1.2rem;
+}
+
+@media only screen and (max-width: 31.25rem) {
+	.issue--info {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.issue--user {
+		margin-bottom: 1.2rem;
+	}
+}
