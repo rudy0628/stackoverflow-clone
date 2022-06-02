@@ -1,4 +1,4 @@
-import './programmingLanguageList.css';
+import './ProgrammingLanguageList.css';
 
 const programmingLanguageArr: string[] = [
 	'C',
